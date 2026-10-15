@@ -1,638 +1,357 @@
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#7c3aed">
-<meta name="description" content="Website profil pribadi dan sekolah.">
-<title>MySpace | Profilku</title>
+<title>Gold Play</title> 
+
+<link rel="stylesheet" href="style.css">
 
 <style>
-:root {
-    --bg: #f5f3ff;
-    --card: #ffffff;
-    --text: #1f2937;
-    --muted: #6b7280;
-    --primary: #7c3aed;
-    --secondary: #a78bfa;
-    --border: #e5e7eb;
-}
-
-body.dark {
-    --bg: #111827;
-    --card: #1f2937;
-    --text: #f9fafb;
-    --muted: #d1d5db;
-    --border: #374151;
-}
-
 * {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
-    scroll-behavior: smooth;
 }
 
 body {
-    margin: 0;
+    background: #050514;
+    color: white;
     font-family: Arial, sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    transition: .3s;
+    padding-bottom: 80px;
 }
 
-nav {
-    position: sticky;
-    top: 0;
-    z-index: 10;
+header {
+    background: #09091c;
+    padding: 18px 15px;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 15px 7%;
-    background: var(--card);
-    box-shadow: 0 2px 15px #00000010;
+    justify-content: space-between;
+    border-bottom: 1px solid #292747;
 }
 
 .logo {
-    font-size: 23px;
+    color: #f8d66d;
+    font-size: 27px;
     font-weight: bold;
-    color: var(--primary);
-}
-
-.navlinks {
-    display: flex;
-    gap: 20px;
-    align-items: center;
-}
-
-.navlinks a {
-    text-decoration: none;
-    color: var(--text);
-    font-weight: bold;
+    text-shadow: 0 0 12px #b58a24;
 }
 
 button {
-    border: none;
-    border-radius: 10px;
-    padding: 11px 16px;
-    background: var(--primary);
-    color: white;
-    font-weight: bold;
     cursor: pointer;
+    border: none;
+    font-weight: bold;
 }
 
-button:hover {
-    opacity: .85;
-    transform: translateY(-1px);
-}
-
-.hero {
-    text-align: center;
-    padding: 70px 20px;
-    background: linear-gradient(135deg, #7c3aed, #2563eb);
+.login {
+    background: transparent;
+    border: 2px solid #55516d;
     color: white;
-}
-
-.hero h1 {
-    font-size: clamp(30px, 6vw, 52px);
-    margin: 15px 0;
-}
-
-.hero p {
-    line-height: 1.7;
-}
-
-.hero button {
-    background: white;
-    color: #6d28d9;
-    margin: 10px 5px;
-}
-
-.container {
-    max-width: 950px;
-    margin: auto;
-    padding: 25px 18px;
-}
-
-.section-title {
-    text-align: center;
-    margin: 35px 0 22px;
-}
-
-.section-title h2 {
-    color: var(--primary);
-    font-size: 29px;
-}
-
-.card {
-    background: var(--card);
-    padding: 24px;
-    border-radius: 18px;
-    margin-bottom: 22px;
-    box-shadow: 0 5px 20px #00000008;
-    border: 1px solid var(--border);
-}
-
-.profile {
-    text-align: center;
-}
-
-.avatar {
-    width: 125px;
-    height: 125px;
-    object-fit: cover;
-    border-radius: 50%;
-    background: #ede9fe;
-    border: 4px solid var(--secondary);
-    margin-bottom: 12px;
-}
-
-.badge {
-    display: inline-block;
-    padding: 7px 12px;
-    border-radius: 20px;
-    background: #ede9fe;
-    color: #6d28d9;
-    margin: 5px;
-    font-size: 13px;
-}
-
-.grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-}
-
-.info {
-    background: var(--bg);
-    padding: 15px;
-    border-radius: 12px;
-    overflow-wrap: anywhere;
-}
-
-.info small {
-    color: var(--muted);
-}
-
-.info p {
-    font-weight: bold;
-    margin-bottom: 0;
-    white-space: pre-wrap;
-    overflow-wrap: anywhere;
-}
-
-label {
-    display: block;
-    margin: 14px 0 7px;
-    font-weight: bold;
-}
-
-input, textarea {
-    width: 100%;
-    padding: 12px;
-    border-radius: 9px;
-    border: 1px solid var(--border);
-    background: var(--bg);
-    color: var(--text);
+    padding: 11px 18px;
+    border-radius: 14px;
     font-size: 15px;
 }
 
-textarea {
-    min-height: 90px;
-    resize: vertical;
-}
-
-.form-buttons {
+.promo {
+    margin: 15px;
+    padding: 25px 20px;
+    border-radius: 22px;
+    min-height: 245px;
+    background:
+        radial-gradient(circle at 85% 20%, #c7a1ff55, transparent 25%),
+        linear-gradient(135deg, #351064, #100b32 55%, #8c2452);
+    border: 1px solid #46316d;
     display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 18px;
+    flex-direction: column;
+    justify-content: center;
 }
 
-.danger {
-    background: #dc2626;
-}
-
-#message {
-    color: #16a34a;
+.promo small {
+    color: #f4d66d;
     font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.promo h1 {
+    font-size: 32px;
+    margin: 15px 0 8px;
+    color: #ffdf6e;
+}
+
+.promo p {
+    font-size: 15px;
+    line-height: 1.6;
+    max-width: 260px;
+}
+
+.promo button {
+    background: linear-gradient(#ffe98a, #c18a19);
+    color: #24133c;
+    padding: 12px;
+    border-radius: 25px;
+    margin-top: 18px;
+    width: 145px;
+    font-size: 14px;
+}
+
+section {
+    padding: 12px 15px;
+}
+
+.judul {
+    font-size: 22px;
+    margin-bottom: 18px;
+}
+
+.games {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 13px;
+}
+
+.game {
+    background: #111027;
+    border: 1px solid #393052;
+    border-radius: 14px;
+    overflow: hidden;
+    text-align: center;
+    padding-bottom: 12px;
+}
+
+.game-icon {
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 43px;
+    background: linear-gradient(145deg, #402069, #15102f, #78254c);
+}
+
+.game h3 {
+    font-size: 13px;
+    margin: 10px 3px 5px;
+}
+
+.game p {
+    color: #e8c957;
+    font-size: 11px;
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+    margin-top: 22px;
+}
+
+.feature {
+    text-align: center;
+    background: #15132c;
+    border: 1px solid #42345f;
+    border-radius: 14px;
+    padding: 15px 5px;
+}
+
+.feature span {
+    display: block;
+    font-size: 30px;
+    margin-bottom: 9px;
+}
+
+.feature p {
+    font-size: 12px;
+}
+
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    background: #111126;
+    border-top: 1px solid #393653;
+    padding: 12px 0 10px;
+}
+
+.nav-item {
+    color: #9291ae;
+    background: none;
+    font-size: 11px;
+    text-align: center;
+}
+
+.nav-item span {
+    display: block;
+    font-size: 23px;
+    margin-bottom: 5px;
+}
+
+.nav-item.active {
+    color: #f6d36a;
 }
 
 footer {
-    background: var(--card);
-    padding: 25px;
     text-align: center;
-    color: var(--muted);
-    margin-top: 30px;
-}
-
-.hidden {
-    display: none;
-}
-
-@media (max-width: 600px) {
-    nav {
-        padding: 14px;
-    }
-
-    .navlinks {
-        gap: 10px;
-        font-size: 12px;
-    }
-
-    .logo {
-        font-size: 19px;
-    }
-
-    .grid {
-        grid-template-columns: 1fr;
-    }
-
-    .hero {
-        padding: 55px 15px;
-    }
-
-    .card {
-        padding: 18px;
-    }
+    padding: 20px;
+    color: #77758e;
+    font-size: 12px;
 }
 </style>
 </head>
 
 <body>
 
-<nav>
-    <div class="logo">MySpace ✨</div>
-
-    <div class="navlinks">
-        <a href="#home">Home</a>
-        <a href="#profil">Profil</a>
-        <a href="#sekolah">Sekolah</a>
-        <button id="themeButton" type="button"
-                aria-label="Ganti tema">🌙</button>
-    </div>
-</nav>
-
-<header class="hero" id="home">
-    <h1>Welcome to MySpace!</h1>
-    <p>
-        Tempat mengenal diriku, perjalanan hidupku,
-        dan sekolah tempatku belajar.
-    </p>
-
-    <button type="button" id="editButton">
-        ✏️ Edit Profil
-    </button>
-
-    <button type="button" id="heroThemeButton">
-        🌙 Ganti Tema
+<header>
+    <div class="logo">👑 PADAS HOKI</div>
+  <button class="login" onclick="pesan('Selamat datang!')">
+        Masuk
     </button>
 </header>
 
-<main class="container">
+<div class="promo">
+    <small>✦ PADAS HOKI ✦</small>
+    <h1>DUNIA GAME<br>YANG SERU!</h1>
+    <p>
+        Jelajahi berbagai permainan
+        dengan tampilan menarik.
+    </p>
+    <button onclick="lihatGame()">LIHAT GAME</button>
+</div>
 
-    <div class="section-title" id="profil">
-        <h2>👤 Tentang Diriku</h2>
-        <p>Kenali aku lebih dekat!</p>
+<section>
+    <h2 class="judul">👑 Game Populer</h2>
+
+    <div class="games">
+        <div class="game">
+            <div class="game-icon">🐂</div>
+            <h3>Golden Bull</h3>
+            <p>Game Populer</p>
+        </div>
+
+        <div class="game">
+            <div class="game-icon">🏛️</div>
+            <h3>Olympus</h3>
+            <p>Game Petualangan</p>
+        </div>
+
+        <div class="game">
+            <div class="game-icon">🤖</div>
+            <h3>Spaceman</h3>
+            <p>Game Luar Angkasa</p>
+        </div>
+
+        <div class="game">
+            <div class="game-icon">✈️</div>
+            <h3>High Flyer</h3>
+            <p>Game Terbang</p>
+        </div>
+
+        <div class="game">
+            <div class="game-icon">🀄</div>
+            <h3>Mahjong</h3>
+            <p>Game Puzzle</p>
+        </div>
+
+        <div class="game">
+            <div class="game-icon">🎁</div>
+            <h3>Lucky Box</h3>
+            <p>Game Hadiah</p>
+        </div>
     </div>
 
-    <section class="card profile">
-        <img id="viewPhoto"
-             class="avatar"
-             alt="Foto profil"
-             src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='125' height='125'%3E%3Crect width='100%25' height='100%25' fill='%23ddd6fe'/%3E%3Ctext x='50%25' y='55%25' text-anchor='middle' font-size='55'%3E%F0%9F%91%A4%3C/text%3E%3C/svg%3E">
-
-        <h2 id="viewName">Nama Kamu</h2>
-        <span class="badge" id="viewClass">Kelas belum diisi</span>
-
-        <p id="viewAbout">
-            Halo! Selamat datang di website pribadiku.
-        </p>
-    </section>
-
-    <section class="grid">
-        <div class="info">
-            <small>Nama Panggilan</small>
-            <p id="viewNickname">Belum diisi</p>
+    <div class="features">
+        <div class="feature"
+             onclick="pesan('Menu Harian dipilih')">
+            <span>🌟</span>
+            <p>Harian</p>
         </div>
 
-        <div class="info">
-            <small>Umur</small>
-            <p id="viewAge">Belum diisi</p>
+        <div class="feature"
+             onclick="pesan('Menu Koleksi dipilih')">
+            <span>🎁</span>
+            <p>Koleksi</p>
         </div>
 
-        <div class="info">
-            <small>Hobi</small>
-            <p id="viewHobby">Belum diisi</p>
+        <div class="feature"
+             onclick="pesan('Menu Misteri dipilih')">
+            <span>❔</span>
+            <p>Misteri</p>
         </div>
 
-        <div class="info">
-            <small>Cita-cita</small>
-            <p id="viewDream">Belum diisi</p>
+        <div class="feature"
+             onclick="pesan('Menu Profil dipilih')">
+            <span>👑</span>
+            <p>Profil</p>
         </div>
-    </section>
 
-    <div class="section-title" id="sekolah">
-        <h2>🏫 Sekolahku</h2>
-        <p>Informasi tentang tempatku menuntut ilmu.</p>
+        <div class="feature"
+             onclick="pesan('Menu Kupon dipilih')">
+            <span>🎟️</span>
+            <p>Kupon</p>
+        </div>
+
+        <div class="feature"
+             onclick="pesan('Menu Pesan dipilih')">
+            <span>💬</span>
+            <p>Pesan</p>
+        </div>
     </div>
-
-    <section class="card">
-        <h2 id="viewSchool">Nama Sekolah</h2>
-
-        <div class="info">
-            <small>Alamat Sekolah</small>
-            <p id="viewAddress">Belum diisi</p>
-        </div>
-
-        <br>
-
-        <div class="grid">
-            <div class="info">
-                <small>Wali Kelas</small>
-                <p id="viewTeacher">Belum diisi</p>
-            </div>
-
-            <div class="info">
-                <small>Jurusan</small>
-                <p id="viewMajor">Belum diisi</p>
-            </div>
-
-            <div class="info">
-                <small>Pelajaran Favorit</small>
-                <p id="viewSubject">Belum diisi</p>
-            </div>
-
-            <div class="info">
-                <small>Motto</small>
-                <p id="viewMotto">Belajar dan terus berkembang!</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="card hidden" id="editor">
-        <h2>📝 Edit Informasi Profil</h2>
-        <p>Isi data yang kamu inginkan, lalu tekan Simpan.</p>
-
-        <form id="profileForm">
-
-            <label for="photo">Foto Profil</label>
-            <input type="file" id="photo" accept="image/*">
-            <small>Format gambar umum, maksimal 1 MB.</small>
-
-            <label for="name">Nama Lengkap</label>
-            <input id="name" maxlength="100" placeholder="Nama lengkap">
-
-            <label for="nickname">Nama Panggilan</label>
-            <input id="nickname" maxlength="60" placeholder="Nama panggilan">
-
-            <label for="age">Umur</label>
-            <input id="age" type="number" min="1" max="120"
-                   placeholder="Umur">
-
-            <label for="className">Kelas</label>
-            <input id="className" maxlength="50"
-                   placeholder="Contoh: XI A">
-
-            <label for="hobby">Hobi</label>
-            <input id="hobby" maxlength="200" placeholder="Hobi">
-
-            <label for="dream">Cita-cita</label>
-            <input id="dream" maxlength="200" placeholder="Cita-cita">
-
-            <label for="about">Tentang Diriku</label>
-            <textarea id="about" maxlength="1000"
-                      placeholder="Ceritakan tentang dirimu"></textarea>
-
-            <hr style="margin:25px 0; border:0; border-top:1px solid var(--border)">
-
-            <h3>Informasi Sekolah</h3>
-
-            <label for="school">Nama Sekolah</label>
-            <input id="school" maxlength="150" placeholder="Nama sekolah">
-
-            <label for="address">Alamat Sekolah</label>
-            <textarea id="address" maxlength="500"
-                      placeholder="Alamat sekolah"></textarea>
-
-            <label for="teacher">Wali Kelas</label>
-            <input id="teacher" maxlength="100"
-                   placeholder="Nama wali kelas">
-
-            <label for="major">Jurusan</label>
-            <input id="major" maxlength="100"
-                   placeholder="Jurusan jika ada">
-
-            <label for="subject">Pelajaran Favorit</label>
-            <input id="subject" maxlength="100"
-                   placeholder="Pelajaran favorit">
-
-            <label for="motto">Motto Hidup</label>
-            <textarea id="motto" maxlength="300"
-                      placeholder="Motto hidupmu"></textarea>
-
-            <div class="form-buttons">
-                <button type="submit">💾 Simpan Profil</button>
-
-                <button type="button" id="cancelButton"
-                        style="background:#64748b">
-                    Batal
-                </button>
-            </div>
-
-            <p id="message" aria-live="polite"></p>
-        </form>
-    </section>
-
-</main>
+</section>
 
 <footer>
-    <p>© <span id="year"></span> MySpace | Website Profilku</p>
-    <p>Dibuat dengan ❤️ menggunakan HTML, CSS, dan JavaScript.</p>
+    Gold Play — Contoh desain website untuk belajar HTML
 </footer>
 
+<nav class="bottom-nav">
+    <button class="nav-item active"
+            onclick="pindah(this, 'Beranda')">
+        <span>🏠</span>Beranda
+    </button>
+
+    <button class="nav-item"
+            onclick="pindah(this, 'Koleksi')">
+        <span>🎒</span>Koleksi
+    </button>
+
+    <button class="nav-item"
+            onclick="pindah(this, 'Undang')">
+        <span>👥</span>Undang
+    </button>
+
+    <button class="nav-item"
+            onclick="pindah(this, 'Hadiah')">
+        <span>🎁</span>Hadiah
+    </button>
+
+    <button class="nav-item"
+            onclick="pindah(this, 'Akun')">
+        <span>👤</span>Akun
+    </button>
+</nav>
+
 <script>
-const $ = id => document.getElementById(id);
-
-const fields = [
-    "name", "nickname", "age", "className", "hobby",
-    "dream", "about", "school", "address", "teacher",
-    "major", "subject", "motto"
-];
-
-const defaultData = {
-    name: "Nama Kamu",
-    nickname: "",
-    age: "",
-    className: "",
-    hobby: "",
-    dream: "",
-    about: "Halo! Selamat datang di website pribadiku.",
-    school: "Nama Sekolah",
-    address: "",
-    teacher: "",
-    major: "",
-    subject: "",
-    motto: "Belajar dan terus berkembang!",
-    photo: ""
-};
-
-let data = {...defaultData};
-let currentPhoto = "";
-let photoChanged = false;
-
-function showMessage(message) {
-    $("message").textContent = message;
+function pesan(teks) {
+    alert(teks);
 }
 
-function showValue(id, value, fallback = "Belum diisi") {
-    $(id).textContent = value || fallback;
-}
-
-function renderProfile() {
-    showValue("viewName", data.name, "Nama Kamu");
-    showValue("viewNickname", data.nickname);
-    showValue("viewAge", data.age ? data.age + " tahun" : "");
-    showValue("viewClass", data.className, "Kelas belum diisi");
-    showValue("viewHobby", data.hobby);
-    showValue("viewDream", data.dream);
-    showValue("viewAbout", data.about, "Belum ada deskripsi.");
-    showValue("viewSchool", data.school, "Nama Sekolah");
-    showValue("viewAddress", data.address);
-    showValue("viewTeacher", data.teacher);
-    showValue("viewMajor", data.major);
-    showValue("viewSubject", data.subject);
-    showValue("viewMotto", data.motto, "Belum diisi");
-
-    if (data.photo) {
-        $("viewPhoto").src = data.photo;
-    }
-}
-
-function openEditor() {
-    fields.forEach(id => {
-        $(id).value = data[id] || "";
+function lihatGame() {
+    document.querySelector(".games").scrollIntoView({
+        behavior: "smooth"
     });
-
-    currentPhoto = data.photo || "";
-    photoChanged = false;
-    $("photo").value = "";
-    $("editor").classList.remove("hidden");
-    $("editor").scrollIntoView({behavior: "smooth"});
 }
 
-function closeEditor() {
-    $("editor").classList.add("hidden");
+function pindah(tombol, nama) {
+    document.querySelectorAll(".nav-item")
+        .forEach(item => item.classList.remove("active"));
+
+    tombol.classList.add("active");
+
+    if (nama !== "Beranda") {
+        pesan("Kamu memilih menu " + nama);
+    }
 }
-
-$("editButton").addEventListener("click", openEditor);
-$("cancelButton").addEventListener("click", closeEditor);
-
-function toggleTheme() {
-    document.body.classList.toggle("dark");
-
-    const dark = document.body.classList.contains("dark");
-    $("themeButton").textContent = dark ? "☀️" : "🌙";
-
-    try {
-        localStorage.setItem("myspaceTheme", dark ? "dark" : "light");
-    } catch (error) {}
-}
-
-$("themeButton").addEventListener("click", toggleTheme);
-$("heroThemeButton").addEventListener("click", toggleTheme);
-
-try {
-    if (localStorage.getItem("myspaceTheme") === "dark") {
-        document.body.classList.add("dark");
-        $("themeButton").textContent = "☀️";
-    }
-
-    const saved = localStorage.getItem("myspaceProfile");
-
-    if (saved) {
-        const parsed = JSON.parse(saved);
-
-        if (parsed && typeof parsed === "object") {
-            fields.forEach(id => {
-                if (typeof parsed[id] === "string" ||
-                    typeof parsed[id] === "number") {
-                    data[id] = String(parsed[id]);
-                }
-            });
-
-            if (typeof parsed.photo === "string") {
-                data.photo = parsed.photo;
-            }
-        }
-    }
-} catch (error) {
-    console.warn("Data sebelumnya tidak dapat dimuat.");
-}
-
-$("photo").addEventListener("change", function() {
-    const file = this.files[0];
-
-    if (!file) return;
-
-    if (!file.type.startsWith("image/")) {
-        showMessage("Pilih file gambar yang valid.");
-        this.value = "";
-        return;
-    }
-
-    if (file.size > 1024 * 1024) {
-        showMessage("Foto maksimal 1 MB.");
-        this.value = "";
-        return;
-    }
-
-    const reader = new FileReader();
-
-    reader.onload = function() {
-        currentPhoto = reader.result;
-        photoChanged = true;
-        showMessage("Foto berhasil dipilih.");
-    };
-
-    reader.onerror = function() {
-        showMessage("Foto gagal dibaca.");
-    };
-
-    reader.readAsDataURL(file);
-});
-
-$("profileForm").addEventListener("submit", function(event) {
-    event.preventDefault();
-
-    const updated = {};
-
-    fields.forEach(id => {
-        updated[id] = $(id).value.trim();
-    });
-
-    if (updated.age &&
-        (!Number.isInteger(Number(updated.age)) ||
-         Number(updated.age) < 1 ||
-         Number(updated.age) > 120)) {
-        showMessage("Periksa kembali umur yang kamu masukkan.");
-        return;
-    }
-
-    updated.photo = photoChanged ? currentPhoto : data.photo;
-
-    try {
-        localStorage.setItem("myspaceProfile", JSON.stringify(updated));
-        data = updated;
-        renderProfile();
-        showMessage("✅ Profil berhasil disimpan di perangkat ini!");
-        closeEditor();
-        $("profil").scrollIntoView({behavior: "smooth"});
-    } catch (error) {
-        showMessage("Gagal menyimpan. Coba foto yang lebih kecil.");
-    }
-});
-
-$("year").textContent = new Date().getFullYear();
-renderProfile();
 </script>
 
 </body>
